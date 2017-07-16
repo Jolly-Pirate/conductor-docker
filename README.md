@@ -24,7 +24,7 @@ Entering the container: `./run.sh enter`
 
 Stopping and removing the container: `./run.sh stop`
 
-When you enter the docker, you can type `exit`, this will exit it and leave it running of course.
+When you enter the container, you can type `exit`. This will leave it running of course.
 
 `./run.sh enter` will re-enter it.
 

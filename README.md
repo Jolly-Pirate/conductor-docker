@@ -1,19 +1,15 @@
 This is a docker container setup for https://github.com/Netherdrake/conductor
   
 # Install
-```
-git clone https://github.com/Jolly-Pirate/conductor-docker.git
-cd conductor-docker
-chmod +x run.sh
-```
+`git clone https://github.com/Jolly-Pirate/conductor-docker.git`
+`cd conductor-docker`
+`chmod +x run.sh`
 
 If you don't have docker installed, do it with
-
-```./run.sh install_docker```
+`./run.sh install_docker`
 
 Build the container
-
-```./run.sh build```
+`./run.sh build`
 
 
 # Usage

@@ -4,6 +4,7 @@ This is a docker container setup for https://github.com/Netherdrake/conductor
 ```
 git clone https://github.com/Jolly-Pirate/conductor-docker.git
 cd conductor-docker
+chmod +x run.sh
 ./run.sh install_docker
 ./run.sh build
 ```

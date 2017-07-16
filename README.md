@@ -8,7 +8,6 @@ cd conductor-docker
 ./run.sh build
 ```
 
-
 # Usage
 Starting the container: `./run.sh start`
 

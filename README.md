@@ -8,9 +8,11 @@ This is a docker container setup for https://github.com/Netherdrake/conductor
 `chmod +x run.sh`
 
 If you don't have docker installed, do it with
+
 `./run.sh install_docker`
 
 Build the container
+
 `./run.sh build`
 
 

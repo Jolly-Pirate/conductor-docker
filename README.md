@@ -2,7 +2,7 @@ This is a docker container setup for https://github.com/Netherdrake/conductor
   
 # Install
 ```
-git clone https://github.com/Someguy123/conductor-docker.git
+git clone https://github.com/Jolly-Pirate/conductor-docker.git
 cd conductor-docker
 ./run.sh install_docker
 ./run.sh build

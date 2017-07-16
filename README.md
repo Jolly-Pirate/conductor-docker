@@ -19,3 +19,7 @@ Stopping and removing the container: `./run.sh stop`
 When you enter the docker, you can type `exit`, this will exit it and leave it running of course.
 
 `./run.sh enter` will re-enter it.
+
+After entering the container, run `conductor`.
+
+You can find detailed usages at the original link at https://github.com/Netherdrake/conductor.

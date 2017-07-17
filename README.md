@@ -32,5 +32,5 @@ After entering the container, run `conductor`.
 
 You can find detailed usages at the original link at https://github.com/Netherdrake/conductor.
 
-# NOTE
+# Note
 If you stop the container, you will lose any settings you did with steempy or conductor. You'll have to re-enter them on restarting the container. Hence, the secure aspect of using docker setups.

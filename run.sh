@@ -3,6 +3,9 @@
 # Conductor docker manager
 #
 
+# NOTE if ping isn't working from the container, restart the docker service. Happens if iptables was restarted.
+# https://unix.stackexchange.com/questions/178829/docker-container-not-able-to-ping-host
+
 # function for warning($1 = text)
 function boldtext() {
   echo -e `tput bold`"$1"`tput sgr0` >&2
@@ -30,12 +33,15 @@ install_docker() {
     fi
 }
 
+#The container name has to be after all of the arguments.
+
 start() {
-	[[ ! -z $(docker ps -a | grep $DOCKER_NAME) ]] && boldtext "Container already started"  ||  ( boldtext "Starting container..." && docker run -h "conductor-container" -itd --name $DOCKER_NAME conductor )
+	[[ ! -z $(docker ps -a | grep $DOCKER_NAME) ]] && boldtext "Container already started"  ||  ( boldtext "Starting container..." && docker run -h "conductor-container" -v $(pwd)/:/root/ -itd --name $DOCKER_NAME conductor)
 }
 
 stop() {
-    [[ ! -z $(docker ps -a | grep $DOCKER_NAME) ]] && ( docker stop $DOCKER_NAME ; docker rm $DOCKER_NAME ; boldtext "Stopping container..." ) || boldtext "Container not running"
+    [[ ! -z $(docker ps -a | grep $DOCKER_NAME) ]] && ( docker stop $DOCKER_NAME ; docker rm -f $DOCKER_NAME ; docker network disconnect --force bridge conductor ; boldtext "Stopping container..." ) || boldtext "Container not running"
+	 #docker network disconnect fix for: docker: Error response from daemon: endpoint with name conductor already exists in network bridge.
 }
 
 enter() {
